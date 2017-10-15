@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "outDir": "./build/",
-        "sourceMap": true,
+        "outDir": "./dist/",
         "noImplicitAny": true,
         "module": "commonjs",
         "target": "es5",
         "jsx": "react",
-        "noUnusedLocals": true
+        "noUnusedLocals": true,
+        "declaration": true
     },
     "include": [
         "./**/*"
