@@ -22,5 +22,20 @@ declare const _default: {
         test: RegExp;
         loader: string;
     };
+    urlLoader: (params: {
+        path: string;
+        limit: number;
+    }) => {
+        test: RegExp;
+        loader: string;
+        options: {
+            limit: number;
+            name: string;
+        };
+    };
+    htmlWebpackPlugin: (params: {
+        htmlTitle: string;
+        htmlAppMountId: string;
+    }) => any;
 };
 export default _default;

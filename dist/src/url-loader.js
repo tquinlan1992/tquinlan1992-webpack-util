@@ -1,4 +1,6 @@
-function getUrlLoader(params: {path: string, limit: number}) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function getUrlLoader(params) {
     return {
         test: /\.(jpg|png|svg)$/,
         loader: 'url-loader',
@@ -6,7 +8,6 @@ function getUrlLoader(params: {path: string, limit: number}) {
             limit: params.limit,
             name: params.path + '[path][name].[ext]'
         }
-    }
+    };
 }
-
-export default getUrlLoader;
+exports.default = getUrlLoader;

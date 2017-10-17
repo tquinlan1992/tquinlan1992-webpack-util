@@ -8,5 +8,6 @@ export default {
     awesomeTypescriptLoader,
     sassLoader,
     sourceMapLoader,
-    urlLoader,htmlWebpackPlugin
+    urlLoader,
+    htmlWebpackPlugin
 }
