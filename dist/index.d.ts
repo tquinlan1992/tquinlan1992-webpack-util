@@ -31,6 +31,7 @@ declare const _default: {
         options: {
             limit: number;
             name: string;
+            outputPath: string;
         };
     };
     htmlWebpackPlugin: (params: {

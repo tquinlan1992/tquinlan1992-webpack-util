@@ -7,6 +7,7 @@ declare function getUrlLoader(params: {
     options: {
         limit: number;
         name: string;
+        outputPath: string;
     };
 };
 export default getUrlLoader;

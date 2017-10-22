@@ -6,7 +6,8 @@ function getUrlLoader(params) {
         loader: 'url-loader',
         options: {
             limit: params.limit,
-            name: params.path + '[path][name].[ext]'
+            name: '[name].[ext]',
+            outputPath: params.path
         }
     };
 }
