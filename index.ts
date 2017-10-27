@@ -1,19 +1,28 @@
-import createWebpackConfig from './src/createWebpackConfig';
-const appRoot = require('app-root-path');
+const commandLineArgs = require('command-line-args');
+import handleDevServerFlag from './src/handleDevServerFlag';
+const jsonfile = require('jsonfile');
+import handleNoDevServerFlag from './src/handleNoDevServerFlag';
+import generateWebpackCompiler from './src/generateWebpackCompiler';
 
-function addAppRootToPaths(config: any) {
-    const absolutePathsConfig = (<any>Object).assign(config, {
-        entry: appRoot + config.entry,
-        appOutputPath: appRoot + config.appOutputPath,
-        tsconfig: appRoot + config.tsconfig
-    });
+const optionDefintions = [
+    {
+        name: 'config', type: String
+    },
+    {
+        name: 'watch', alias: 'w', type: Boolean
+    }, {
+        name: 'devServer', alias: 'd', type: Boolean
+    }
+]
 
-    return absolutePathsConfig;
-}
+const options = commandLineArgs(optionDefintions);
+jsonfile.readFile(options.config, (err: any, json: any) => {
 
-function generateWebpackConfig(config: any) {
-    const absolutePathsConfig = addAppRootToPaths(config);
-    return createWebpackConfig(absolutePathsConfig);
-}
+    const compiler = generateWebpackCompiler(json)
 
-export default generateWebpackConfig;
+    if (options.devServer) {
+        handleDevServerFlag(compiler);
+    } else {
+        handleNoDevServerFlag({ compiler, watch: options.watch});
+    }
+});
