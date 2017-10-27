@@ -1,38 +1,19 @@
-import awesomeTypescriptLoader from './src/awesome-typescript-loader';
-import sassLoader from './src/sassLoader';
-import sourceMapLoader from './src/source-map-loader';
-import urlLoader from './src/url-loader';
-import htmlWebpackPlugin from './src/html-webpack-plugin';
-import CopyWebpackPlugin from './src/copy-webpack-plugin';
+import createWebpackConfig from './src/createWebpackConfig';
+const appRoot = require('app-root-path');
 
-const typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
-const htmlAppMountId = 'app';
+function addAppRootToPaths(config: any) {
+    const absolutePathsConfig = (<any>Object).assign(config, {
+        entry: appRoot + config.entry,
+        appOutputPath: appRoot + config.appOutputPath,
+        tsconfig: appRoot + config.tsconfig
+    });
 
-function createWebpackConfig(params: {entry: string, appOutputFilename: string, appOutputPath: string, htmlTitle: string, tsconfig: string, publicDir: string, publicDirContext: string}) {
-    const { entry, appOutputFilename, appOutputPath, htmlTitle, tsconfig, publicDir, publicDirContext } = params;
-    return {
-        entry: entry,
-        output: {
-            filename: appOutputFilename,
-            path: appOutputPath
-        },
-        devtool: "source-map",
-        resolve: {
-            extensions: typescriptExtensions
-        },
-        module: {
-            rules: [
-                awesomeTypescriptLoader(tsconfig),
-                sourceMapLoader,
-                sassLoader,
-                urlLoader({ path: './images/', limit: 250 })
-            ]
-        },
-        plugins: [
-            htmlWebpackPlugin({ htmlTitle, htmlAppMountId }),
-            CopyWebpackPlugin({context: publicDirContext, from: publicDir})
-        ]
-    }
+    return absolutePathsConfig;
 }
 
-export default createWebpackConfig;
+function generateWebpackConfig(config: any) {
+    const absolutePathsConfig = addAppRootToPaths(config);
+    return createWebpackConfig(absolutePathsConfig);
+}
+
+export default generateWebpackConfig;

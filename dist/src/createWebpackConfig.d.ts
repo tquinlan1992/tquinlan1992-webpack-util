@@ -1,4 +1,12 @@
-declare function generateWebpackConfig(config: any): {
+declare function createWebpackConfig(params: {
+    entry: string;
+    appOutputFilename: string;
+    appOutputPath: string;
+    htmlTitle: string;
+    tsconfig: string;
+    publicDir: string;
+    publicDirContext: string;
+}): {
     entry: string;
     output: {
         filename: string;
@@ -41,4 +49,4 @@ declare function generateWebpackConfig(config: any): {
     };
     plugins: any[];
 };
-export default generateWebpackConfig;
+export default createWebpackConfig;
