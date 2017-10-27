@@ -6,11 +6,32 @@ var source_map_loader_1 = require("./src/source-map-loader");
 var url_loader_1 = require("./src/url-loader");
 var html_webpack_plugin_1 = require("./src/html-webpack-plugin");
 var copy_webpack_plugin_1 = require("./src/copy-webpack-plugin");
-exports.default = {
-    awesomeTypescriptLoader: awesome_typescript_loader_1.default,
-    sassLoader: sassLoader_1.default,
-    sourceMapLoader: source_map_loader_1.default,
-    urlLoader: url_loader_1.default,
-    htmlWebpackPlugin: html_webpack_plugin_1.default,
-    CopyWebpackPlugin: copy_webpack_plugin_1.default
-};
+var typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
+var htmlAppMountId = 'app';
+function createWebpackConfig(params) {
+    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig;
+    return {
+        entry: entry,
+        output: {
+            filename: appOutputFilename,
+            path: appOutputPath
+        },
+        devtool: "source-map",
+        resolve: {
+            extensions: typescriptExtensions
+        },
+        module: {
+            rules: [
+                awesome_typescript_loader_1.default(tsconfig),
+                source_map_loader_1.default,
+                sassLoader_1.default,
+                url_loader_1.default({ path: './images/', limit: 250 })
+            ]
+        },
+        plugins: [
+            html_webpack_plugin_1.default({ htmlTitle: htmlTitle, htmlAppMountId: htmlAppMountId }),
+            copy_webpack_plugin_1.default({ context: '../src', from: 'public/**/*' })
+        ]
+    };
+}
+exports.default = createWebpackConfig;

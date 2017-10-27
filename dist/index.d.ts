@@ -1,46 +1,50 @@
-declare const _default: {
-    awesomeTypescriptLoader: (configPath: string) => {
-        test: RegExp;
-        loader: string;
-        options: {
-            configFileName: string;
-        };
+declare function createWebpackConfig(params: {
+    entry: string;
+    appOutputFilename: string;
+    appOutputPath: string;
+    htmlTitle: string;
+    tsconfig: string;
+}): {
+    entry: string;
+    output: {
+        filename: string;
+        path: string;
     };
-    sassLoader: {
-        test: RegExp;
-        use: ({
-            loader: string;
-        } | {
+    devtool: string;
+    resolve: {
+        extensions: string[];
+    };
+    module: {
+        rules: ({
+            test: RegExp;
             loader: string;
             options: {
-                sourceMap: boolean;
+                configFileName: string;
             };
+        } | {
+            test: RegExp;
+            loader: string;
+            options: {
+                limit: number;
+                name: string;
+                outputPath: string;
+            };
+        } | {
+            enforce: string;
+            test: RegExp;
+            loader: string;
+        } | {
+            test: RegExp;
+            use: ({
+                loader: string;
+            } | {
+                loader: string;
+                options: {
+                    sourceMap: boolean;
+                };
+            })[];
         })[];
     };
-    sourceMapLoader: {
-        enforce: string;
-        test: RegExp;
-        loader: string;
-    };
-    urlLoader: (params: {
-        path: string;
-        limit: number;
-    }) => {
-        test: RegExp;
-        loader: string;
-        options: {
-            limit: number;
-            name: string;
-            outputPath: string;
-        };
-    };
-    htmlWebpackPlugin: (params: {
-        htmlTitle: string;
-        htmlAppMountId: string;
-    }) => any;
-    CopyWebpackPlugin: (params: {
-        context: string;
-        from: string;
-    }) => any;
+    plugins: any[];
 };
-export default _default;
+export default createWebpackConfig;
