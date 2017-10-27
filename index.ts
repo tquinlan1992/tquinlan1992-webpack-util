@@ -8,8 +8,8 @@ import CopyWebpackPlugin from './src/copy-webpack-plugin';
 const typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
 const htmlAppMountId = 'app';
 
-function createWebpackConfig(params: {entry: string, appOutputFilename: string, appOutputPath: string, htmlTitle: string, tsconfig: string}) {
-    const { entry, appOutputFilename, appOutputPath, htmlTitle, tsconfig } = params;
+function createWebpackConfig(params: {entry: string, appOutputFilename: string, appOutputPath: string, htmlTitle: string, tsconfig: string, publicDir: string, publicDirContext: string}) {
+    const { entry, appOutputFilename, appOutputPath, htmlTitle, tsconfig, publicDir, publicDirContext } = params;
     return {
         entry: entry,
         output: {
@@ -30,7 +30,7 @@ function createWebpackConfig(params: {entry: string, appOutputFilename: string, 
         },
         plugins: [
             htmlWebpackPlugin({ htmlTitle, htmlAppMountId }),
-            CopyWebpackPlugin({context: '../src', from: 'public/**/*'})
+            CopyWebpackPlugin({context: publicDirContext, from: publicDir})
         ]
     }
 }
