@@ -38,5 +38,9 @@ declare const _default: {
         htmlTitle: string;
         htmlAppMountId: string;
     }) => any;
+    CopyWebpackPlugin: (params: {
+        context: string;
+        from: string;
+    }) => any;
 };
 export default _default;
