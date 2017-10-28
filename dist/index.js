@@ -10,7 +10,7 @@ var generateWebpackCompiler_1 = require("./src/generateWebpackCompiler");
 var addAppRootToPaths_1 = require("./src/addAppRootToPaths");
 var optionDefintions = [
     {
-        name: 'config', type: String
+        name: 'config', type: String, defaultOption: "tquinlan1992-webpack-util.config.json"
     },
     {
         name: 'watch', alias: 'w', type: Boolean

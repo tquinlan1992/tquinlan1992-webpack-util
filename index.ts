@@ -7,7 +7,7 @@ import addAppRootToPaths from './src/addAppRootToPaths';
 
 const optionDefintions = [
     {
-        name: 'config', type: String
+        name: 'config', type: String, defaultOption: "tquinlan1992-webpack-util.config.json"
     },
     {
         name: 'watch', alias: 'w', type: Boolean
