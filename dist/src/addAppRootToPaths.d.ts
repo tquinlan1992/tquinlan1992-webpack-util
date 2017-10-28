@@ -1,2 +1,2 @@
-declare function addAppRootToPaths(config: any): any;
-export default addAppRootToPaths;
+declare function setPaths(config: any): any;
+export default setPaths;
