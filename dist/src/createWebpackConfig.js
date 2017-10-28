@@ -9,7 +9,7 @@ var copy_webpack_plugin_1 = require("./copy-webpack-plugin");
 var typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
 var htmlAppMountId = 'app';
 function createWebpackConfig(params) {
-    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig, publicDir = params.publicDir, publicDirContext = params.publicDirContext;
+    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig, publicDir = params.publicDir, publicDirContext = params.publicDirContext, publicDirTo = params.publicDirTo;
     return {
         entry: entry,
         output: {
@@ -30,7 +30,7 @@ function createWebpackConfig(params) {
         },
         plugins: [
             html_webpack_plugin_1.default({ htmlTitle: htmlTitle, htmlAppMountId: htmlAppMountId }),
-            copy_webpack_plugin_1.default({ context: publicDirContext, from: publicDir })
+            copy_webpack_plugin_1.default({ context: publicDirContext, from: publicDir, to: publicDirTo })
         ]
     };
 }

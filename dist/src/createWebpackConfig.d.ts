@@ -6,6 +6,7 @@ declare function createWebpackConfig(params: {
     tsconfig: string;
     publicDir: string;
     publicDirContext: string;
+    publicDirTo: string;
 }): {
     entry: string;
     output: {
