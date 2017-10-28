@@ -1,6 +1,6 @@
 # tquinlan1992-webpack-util
 
-Customer typescript wrapper around webpack
+Custom typescript wrapper around webpack
 
 <h2 align="center">Install</h2>
 Install with npm:
