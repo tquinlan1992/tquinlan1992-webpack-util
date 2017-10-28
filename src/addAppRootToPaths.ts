@@ -14,11 +14,12 @@ function addDefaultPaths(config: any) {
     return defaultPaths;
 }
 function addAppRootToPaths(config: any) {
-    const { entry, appOutputPath, tsconfig } = config;
+    const { entry, appOutputPath, tsconfig, publicDirSrc } = config;
     const absolutePathsConfig = (<any>Object).assign(config, {
         entry: appRoot + entry,
         appOutputPath: appRoot + appOutputPath,
-        tsconfig: appRoot + tsconfig
+        tsconfig: appRoot + tsconfig,
+        publicDirSrc: appRoot + publicDirSrc
     });
 
     return absolutePathsConfig;

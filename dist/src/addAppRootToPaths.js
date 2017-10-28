@@ -13,11 +13,12 @@ function addDefaultPaths(config) {
     return defaultPaths;
 }
 function addAppRootToPaths(config) {
-    var entry = config.entry, appOutputPath = config.appOutputPath, tsconfig = config.tsconfig;
+    var entry = config.entry, appOutputPath = config.appOutputPath, tsconfig = config.tsconfig, publicDirSrc = config.publicDirSrc;
     var absolutePathsConfig = Object.assign(config, {
         entry: appRoot + entry,
         appOutputPath: appRoot + appOutputPath,
-        tsconfig: appRoot + tsconfig
+        tsconfig: appRoot + tsconfig,
+        publicDirSrc: appRoot + publicDirSrc
     });
     return absolutePathsConfig;
 }
