@@ -8,9 +8,9 @@ function setDefaultIfNoConfig(params: {path: string, defaultPath: string}) {
 function addDefaultPaths(config: any) {
     const { entry, appOutputPath, tsconfig } = config;
     const defaultPaths = (<any>Object).assign(config, {
-        entry: setDefaultIfNoConfig(entry),
-        appOutputPath: setDefaultIfNoConfig(appOutputPath),
-        tsconfig: setDefaultIfNoConfig(tsconfig)
+        entry: setDefaultIfNoConfig({path: entry, defaultPath: "./src/app.tsx"}),
+        appOutputPath: setDefaultIfNoConfig({path: appOutputPath, defaultPath: "/build"}),
+        tsconfig: setDefaultIfNoConfig({path: tsconfig, defaultPath: "/tsconfig.json"})
     });
 
     return defaultPaths;
