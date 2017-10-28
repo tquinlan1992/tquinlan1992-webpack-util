@@ -13,7 +13,7 @@ npm install --save-dev tquinlan1992-webpack-util
 tquinlan1992-webpack-util
 ```
 
-- Default config path is tquinlan1992-webpack-util.config.json
+- Default config path is ```./tquinlan1992-webpack-util.config.json``` relative to package.json
 
 
 <h2 align="center">Schema</h2>
