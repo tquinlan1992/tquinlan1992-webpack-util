@@ -1,10 +1,12 @@
 const appRoot = require('app-root-path');
 
 function addAppRootToPaths(config: any) {
+    const { entry, appOutputPath, tsconfig, publicDirContext } = config;
     const absolutePathsConfig = (<any>Object).assign(config, {
-        entry: appRoot + config.entry,
-        appOutputPath: appRoot + config.appOutputPath,
-        tsconfig: appRoot + config.tsconfig
+        entry: appRoot + entry,
+        appOutputPath: appRoot + appOutputPath,
+        tsconfig: appRoot + tsconfig,
+        publicDirContext: appRoot + publicDirContext
     });
 
     return absolutePathsConfig;
