@@ -38,5 +38,5 @@ Default config path is ```./tquinlan1992-webpack-util.config.json``` relative to
 }
 ```
 
-### Development env for index.js
+<h3 align="left">Development env for index.js</h3>
 - ```#!/usr/bin/env node```
