@@ -4,12 +4,12 @@ Custom typescript wrapper around webpack
 
 <h2 align="center">Install</h2>
 Install with npm:
-```bash
+```
 npm install --save-dev tquinlan1992-webpack-util
 ```
 
 <h2 align="center">Usage</h2>
-```bash
+```
 tquinlan1992-webpack-util
 ```
 
