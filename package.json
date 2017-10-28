@@ -1,6 +1,6 @@
 {
   "name": "tquinlan1992-webpack-util",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index",
