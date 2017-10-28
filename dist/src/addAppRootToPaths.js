@@ -6,10 +6,8 @@ function setDefaultIfNoConfig(params) {
     return path ? path : defaultPath;
 }
 function addDefaultPaths(config) {
-    var entry = config.entry, appOutputPath = config.appOutputPath, tsconfig = config.tsconfig;
+    var tsconfig = config.tsconfig;
     var defaultPaths = Object.assign(config, {
-        entry: setDefaultIfNoConfig({ path: entry, defaultPath: "./src/app.tsx" }),
-        appOutputPath: setDefaultIfNoConfig({ path: appOutputPath, defaultPath: "/build" }),
         tsconfig: setDefaultIfNoConfig({ path: tsconfig, defaultPath: "/tsconfig.json" })
     });
     return defaultPaths;
