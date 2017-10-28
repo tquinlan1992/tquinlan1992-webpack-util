@@ -1,5 +1,8 @@
-function handleNoDevServerFlag(params: {compiler: any, watch: boolean}) {
-    const { compiler, watch } = params;
+import copyPublicFolder from './copyPublicFolder';
+
+function handleNoDevServerFlag(params: { compiler: any, watch: boolean, config: any }) {
+    const { compiler, watch, config } = params;
+    copyPublicFolder.build(config);
     if (watch) {
         compiler.watch({ // watch options:
             aggregateTimeout: 300, // wait so long for more changes
@@ -9,9 +12,7 @@ function handleNoDevServerFlag(params: {compiler: any, watch: boolean}) {
             // ...
         });
     } else {
-
         compiler.run((err: any, stats: any) => {
-
         });
     }
 }

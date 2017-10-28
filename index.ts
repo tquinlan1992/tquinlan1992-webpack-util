@@ -3,6 +3,7 @@ import handleDevServerFlag from './src/handleDevServerFlag';
 const jsonfile = require('jsonfile');
 import handleNoDevServerFlag from './src/handleNoDevServerFlag';
 import generateWebpackCompiler from './src/generateWebpackCompiler';
+import addAppRootToPaths from './src/addAppRootToPaths';
 
 const optionDefintions = [
     {
@@ -17,12 +18,17 @@ const optionDefintions = [
 
 const options = commandLineArgs(optionDefintions);
 jsonfile.readFile(options.config, (err: any, json: any) => {
+    if (err) {
+        console.log("error running tquinlan1992-webpack-util", err);
+        return;
+    }
+    const absolutePathsConfig = addAppRootToPaths(json);
 
-    const compiler = generateWebpackCompiler(json)
+    const compiler = generateWebpackCompiler(absolutePathsConfig)
 
     if (options.devServer) {
-        handleDevServerFlag(compiler);
+        handleDevServerFlag({ compiler, config: absolutePathsConfig });
     } else {
-        handleNoDevServerFlag({ compiler, watch: options.watch});
+        handleNoDevServerFlag({ compiler, watch: options.watch, config: absolutePathsConfig});
     }
 });

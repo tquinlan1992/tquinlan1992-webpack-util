@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var copyPublicFolder_1 = require("./copyPublicFolder");
 function handleNoDevServerFlag(params) {
-    var compiler = params.compiler, watch = params.watch;
+    var compiler = params.compiler, watch = params.watch, config = params.config;
+    copyPublicFolder_1.default.build(config);
     if (watch) {
         compiler.watch({
             aggregateTimeout: 300,
