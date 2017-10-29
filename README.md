@@ -43,8 +43,7 @@ Custom typescript wrapper around webpack
     "appOutputFilename": "Name of bundled build javascript file",
     "appOutputPath": "build path for app and publicDirOut",
     "htmlTitle": "title of html file generated",
-    "publicDirSrc": "Path of static files (environment variables are recommended for this dirctory)"",
-    ",
+    "publicDirSrc": "Path of static files (environment variables are recommended for this directory)",
     "publicDirOut": "directory path relative to appOutputPath of publicDir build"
 }
 ```
