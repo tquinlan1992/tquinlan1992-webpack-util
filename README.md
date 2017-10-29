@@ -24,12 +24,12 @@ Custom typescript wrapper around webpack
 
 <h5>Watch</h5>
 
-- Use the flag ```--watch``` (```-w``` is the alias)
+- Use the flag ```--watch``` or ```-w``` for the alias
 ```tquinlan1992-webpack-util --watch```
 
 <h5>Dev Server</h5>
 
-- To run the dev server: use the flag ```--devServer```, (```-d``` is the alias).
+- To run the dev server: use the flag ```--devServer``` or ```-d``` for the alias
 ```tquinlan1992-webpack-util -devServer```
     - The watch flag is ignored when using the ```--devServer``` flag
 
