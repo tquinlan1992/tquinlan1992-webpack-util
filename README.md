@@ -58,4 +58,5 @@ Custom typescript wrapper around webpack
 ```
 
 <h3 align="left">Development env for index.js</h3>
+
 - ```#!/usr/bin/env node```
