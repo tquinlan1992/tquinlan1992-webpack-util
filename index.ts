@@ -1,6 +1,6 @@
-const commandLineArgs = require('command-line-args');
+import * as commandLineArgs from 'command-line-args';
 import handleDevServerFlag from './src/handleDevServerFlag';
-const jsonfile = require('jsonfile');
+import * as jsonfile from 'jsonfile';
 import handleNoDevServerFlag from './src/handleNoDevServerFlag';
 import generateWebpackCompiler from './src/generateWebpackCompiler';
 import addAppRootToPaths from './src/addAppRootToPaths';

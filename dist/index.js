@@ -2,9 +2,9 @@
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var commandLineArgs = require('command-line-args');
+var commandLineArgs = require("command-line-args");
 var handleDevServerFlag_1 = require("./src/handleDevServerFlag");
-var jsonfile = require('jsonfile');
+var jsonfile = require("jsonfile");
 var handleNoDevServerFlag_1 = require("./src/handleNoDevServerFlag");
 var generateWebpackCompiler_1 = require("./src/generateWebpackCompiler");
 var addAppRootToPaths_1 = require("./src/addAppRootToPaths");

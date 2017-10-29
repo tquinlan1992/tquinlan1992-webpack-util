@@ -9,13 +9,7 @@ declare const _default: {
         extensions: string[];
     };
     module: {
-        rules: {
-            test: RegExp;
-            loader: string;
-            options: {
-                configFileName: string;
-            };
-        }[];
+        rules: any[];
     };
 };
 export default _default;

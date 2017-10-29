@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var awesome_typescript_loader_1 = require("./awesome-typescript-loader");
-var sassLoader_1 = require("./sassLoader");
-var source_map_loader_1 = require("./source-map-loader");
-var url_loader_1 = require("./url-loader");
-var html_webpack_plugin_1 = require("./html-webpack-plugin");
+var awesome_typescript_loader_1 = require("./util/awesome-typescript-loader");
+var sassLoader_1 = require("./util/sassLoader");
+var source_map_loader_1 = require("./util/source-map-loader");
+var url_loader_1 = require("./util/url-loader");
+var html_webpack_plugin_1 = require("./util/html-webpack-plugin");
 var typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
 var htmlAppMountId = 'app';
 function createWebpackConfig(params) {

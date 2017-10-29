@@ -1,6 +1,6 @@
 {
   "name": "tquinlan1992-webpack-util",
-  "version": "2.0.9",
+  "version": "2.0.11",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index",
@@ -20,7 +20,10 @@
     "url": "https://github.com/tquinlan1992/tquinlan1992-webpack-util/issues"
   },
   "homepage": "https://github.com/tquinlan1992/tquinlan1992-webpack-util#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/jsonfile": "^4.0.1",
+    "@types/command-line-args": "^4.0.1"
+  },
   "dependencies": {
     "app-root-path": "^2.0.1",
     "awesome-typescript-loader": "^3.2.3",
