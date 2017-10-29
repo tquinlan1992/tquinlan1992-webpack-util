@@ -1,5 +1,7 @@
 <h1 align="center">tquinlan1992-webpack-util</h1>
 
+[![npm](https://img.shields.io/npm/v/tquinlan1992-webpack-util.svg?style=flat-square)](https://www.npmjs.com/package/tquinlan1992-webpack-util)
+
 Custom typescript wrapper around webpack
 
 <h2 align="center">Install</h2>
