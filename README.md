@@ -11,11 +11,11 @@ Custom typescript wrapper around webpack
 
 <h2 align="center">Usage</h2>
 
-<h5>Build</h5>
+<h5 align="left">Build</h5>
 
 - run with ```tquinlan1992-webpack-util```
 
-<h5>Config.json path</h5>
+<h5 align="left">Config.json path</h5>
 
 - The config path is relative to package.json
 - Default config path is ```./tquinlan1992-webpack-util.config.json```
