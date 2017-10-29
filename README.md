@@ -3,20 +3,32 @@
 Custom typescript wrapper around webpack
 
 <h2 align="center">Install</h2>
-Install with npm: ```npm install --save-dev tquinlan1992-webpack-util```
+
+- Install with npm: ```npm install --save-dev tquinlan1992-webpack-util```
 
 <h2 align="center">Usage</h2>
 
-run with ```tquinlan1992-webpack-util```
+<h5>Build</h5>
 
-Default config path is ```./tquinlan1992-webpack-util.config.json``` relative to package.json
+- run with ```tquinlan1992-webpack-util```
 
-To run with a different config path use the flag --config to specify the path ```tquinlan1992-webpack-util --config <config path>```
+<h5>Config.json path</h5>
 
-To watch: use the flag ```--watch``` (```-w``` is the alias) ```tquinlan1992-webpack-util --watch```
+- The config path is relative to package.json
+- Default config path is ```./tquinlan1992-webpack-util.config.json```
+- To run with a different config path use the flag --config to specify the path
+```tquinlan1992-webpack-util --config <config path>```
 
-To run the dev server: use the flag ```--devServer```, (```-d``` is the alias).  The watch flag is ignored when using the ```--devServer``` flag
-```tquinlan1992-webpack-util -devServer```  
+<h5>Watch</h5>
+
+- Use the flag ```--watch``` (```-w``` is the alias)
+```tquinlan1992-webpack-util --watch```
+
+<h5>Dev Server</h5>
+
+- To run the dev server: use the flag ```--devServer```, (```-d``` is the alias).
+```tquinlan1992-webpack-util -devServer```
+    - The watch flag is ignored when using the ```--devServer``` flag
 
 <h2 align="center">Schema</h2>
 
