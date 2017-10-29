@@ -1,4 +1,8 @@
 import * as shell from 'shelljs';
 
 
-shell.exec("node ./node_modules/jest/bin/jest.js");
+const executeJest = "node ./node_modules/jest/bin/jest.js "
+
+const configFlagWithPath ="--config ./node_modules/tquinlan1992-webpack-util/jest/jestConfig.js";
+
+shell.exec(executeJest + configFlagWithPath);
