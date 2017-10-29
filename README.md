@@ -6,6 +6,7 @@ Custom typescript wrapper around webpack
 Install with npm: ```npm install --save-dev tquinlan1992-webpack-util```
 
 <h2 align="center">Usage</h2>
+
 run with ```tquinlan1992-webpack-util```
 
 Default config path is ```./tquinlan1992-webpack-util.config.json``` relative to package.json
