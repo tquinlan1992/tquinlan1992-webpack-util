@@ -33,7 +33,9 @@ Custom typescript wrapper around webpack
 ```tquinlan1992-webpack-util -devServer```
     - The watch flag is ignored when using the ```--devServer``` flag
 
-<h2 align="center">Schema</h2>
+<h2 align="center">tquinlan1992-webpack-util.config.json Schema</h2>
+
+- ```tsconfig.json``` path is hardcoded to be the root of the project
 
 ```json
 {
