@@ -1,6 +1,6 @@
 const appRoot = require('app-root-path');
 
-import awesomeTypescripLoaderUtil from './src/awesome-typescript-loader';
+import awesomeTypescripLoaderUtil from './src/util/awesome-typescript-loader';
 
 const entry: string = './index.ts';
 const dist = appRoot + './dist';

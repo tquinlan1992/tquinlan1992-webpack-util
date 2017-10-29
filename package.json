@@ -12,7 +12,8 @@
     "url": "git+https://github.com/tquinlan1992/tquinlan1992-webpack-util.git"
   },
   "bin": {
-    "tquinlan1992-webpack-util": "./dist/index.js"
+    "tquinlan1992-webpack-util": "./dist/index.js",
+    "tquinlan1992-webpack-util-jest": "./dist/src/jest/index"
   },
   "author": "",
   "license": "ISC",
