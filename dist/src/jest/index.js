@@ -14,7 +14,7 @@ var options = commandLineArgs(optionDefintions);
 function getDebugCommand(params) {
     var debug = params.debug;
     if (debug) {
-        return "--inspect --inspect-brk";
+        return "--inspect --inspect-brk ";
     }
     else {
         "";
@@ -25,9 +25,9 @@ function getUserJestArgs() {
     return args.slice(2).join(" ");
 }
 var jestPath = "'" + appRoot.resolve("./node_modules/jest/bin/jest.js") + "'";
-var executeJest = "node " + jestPath + " ";
-var jestConfigPath = "'" + appRoot.resolve("./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js") + "'";
 var debugCommand = getDebugCommand(options);
+var executeJest = "node " + debugCommand + jestPath + " ";
+var jestConfigPath = "'" + appRoot.resolve("./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js") + "'";
 var configFlagWithPath = "--config " + jestConfigPath + " ";
 var userJestArgs = getUserJestArgs();
-shell.exec(executeJest + debugCommand + configFlagWithPath + userJestArgs);
+shell.exec(executeJest + configFlagWithPath + userJestArgs);

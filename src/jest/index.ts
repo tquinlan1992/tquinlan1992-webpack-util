@@ -13,7 +13,7 @@ const options = commandLineArgs(optionDefintions);
 function getDebugCommand(params: {debug: Boolean}): String {
     const { debug }= params;
     if (debug) {
-        return "--inspect --inspect-brk"
+        return "--inspect --inspect-brk "
     } else {
         ""
     }
@@ -26,15 +26,15 @@ function getUserJestArgs(): String {
 
 const jestPath = "'" + appRoot.resolve("./node_modules/jest/bin/jest.js") + "'";
 
-const executeJest = "node " + jestPath + " ";
+const debugCommand = getDebugCommand(options);
+
+const executeJest = "node " + debugCommand + jestPath + " ";
 
 const jestConfigPath = "'" + appRoot.resolve("./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js") + "'";
-
-const debugCommand = getDebugCommand(options);
 
 const configFlagWithPath = "--config " + jestConfigPath + " ";
 
 
 const userJestArgs = getUserJestArgs();
 
-shell.exec(executeJest + debugCommand + configFlagWithPath + userJestArgs);
+shell.exec(executeJest + configFlagWithPath + userJestArgs);
