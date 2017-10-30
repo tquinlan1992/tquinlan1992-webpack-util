@@ -19,9 +19,13 @@ function getDebugCommand(params: {debug: Boolean}): String {
     }
 }
 
-function getUserJestArgs(): String {
+function getUserJestArgs(startAt3: Boolean): String {
+    let sliceStart = 2;
+    if (startAt3) {
+        sliceStart = 3;
+    }
     const args = process.argv
-    return args.slice(2).join(" ")
+    return args.slice(sliceStart).join(" ")
 }
 
 const jestPath = "'" + appRoot.resolve("./node_modules/jest/bin/jest.js") + "'";
@@ -35,6 +39,6 @@ const jestConfigPath = "'" + appRoot.resolve("./node_modules/tquinlan1992-webpac
 const configFlagWithPath = "--config " + jestConfigPath + " ";
 
 
-const userJestArgs = getUserJestArgs();
+const userJestArgs = getUserJestArgs(!!debugCommand);
 
 shell.exec(executeJest + configFlagWithPath + userJestArgs);
