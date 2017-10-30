@@ -6,7 +6,7 @@ function getUserJestArgs(): String {
     return args.slice(2).join(" ")
 }
 
-const jestPath = appRoot + "/node_modules/jest/bin/jest.js"
+const jestPath = appRoot + "../../../node_modules/jest/bin/jest.js"
 
 const executeJest = "node " + jestPath + " ";
 
