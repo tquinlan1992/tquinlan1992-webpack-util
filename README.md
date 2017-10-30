@@ -1,4 +1,4 @@
-<h1 align="center">tquinlan1992-webpack-util</h1>
+<h1 align="center">tquinlan1992-webpack-util and tquinlan1992-webpack-util-jest</h1>
 
 [![npm](https://img.shields.io/npm/v/tquinlan1992-webpack-util.svg?style=flat-square)](https://www.npmjs.com/package/tquinlan1992-webpack-util)
 [![Dependencies](https://david-dm.org/tquinlan1992/tquinlan1992-webpack-util.svg)](https://david-dm.org/tquinlan1992/tquinlan1992-webpack-util)
@@ -35,8 +35,6 @@ Custom typescript wrapper around webpack
 
 <h2 align="center">tquinlan1992-webpack-util.config.json Schema</h2>
 
-- ```tsconfig.json``` path is hardcoded to be the root of the project
-
 ```json
 {
     "entry": "any file with extension ['.ts', '.tsx', '.js'] for index of app",
@@ -44,7 +42,8 @@ Custom typescript wrapper around webpack
     "appOutputPath": "build path for app and publicDirOut",
     "htmlTitle": "title of html file generated",
     "publicDirSrc": "Path of static files (environment variables are recommended for this directory)",
-    "publicDirOut": "directory path relative to appOutputPath of publicDir build"
+    "publicDirOut": "directory path relative to appOutputPath",
+    "tsconfig": "path of tsconfig.json file, defaults to ./tsconfig.json relative to project root"
 }
 ```
 
@@ -60,6 +59,17 @@ Custom typescript wrapper around webpack
     "publicDirOut": "/public"
 }
 ```
+
+<h2 align="center">Jest (For testing)</h2>
+This is a wrapper around the Jest test
+
+ - To run all tests ```tquinlan1992-webpack-util-jest```
+    - This runs the tests for ```"(/__src__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?|ts?|js?)$"```
+
+- To update a snapshot use the flag ```--updateSnapshot``` or the alias ```-u```
+    - ```tquinlan1992-webpack-util-jest --updateSnapshot```
+
+- For coverage report ```tquinlan1992-webpack-util-jest --coverage```
 
 <h3 align="left">Development env for index.js</h3>
 
