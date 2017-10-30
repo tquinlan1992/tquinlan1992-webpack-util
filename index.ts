@@ -14,7 +14,7 @@ const optionDefintions = [
     }, {
         name: 'devServer', alias: 'd', type: Boolean
     }
-]
+];
 
 const options = commandLineArgs(optionDefintions);
 jsonfile.readFile(options.config, (err: any, json: any) => {
