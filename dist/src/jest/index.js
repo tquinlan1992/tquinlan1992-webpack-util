@@ -10,6 +10,7 @@ function getUserJestArgs() {
 }
 var jestPath = "'" + appRoot.resolve("./node_modules/jest/bin/jest.js") + "'";
 var executeJest = "node " + jestPath + " ";
-var configFlagWithPath = "--config ./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js ";
+var jestConfigPath = "'" + appRoot.resolve("./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js") + "'";
+var configFlagWithPath = "--config " + jestConfigPath + " ";
 var userJestArgs = getUserJestArgs();
 shell.exec(executeJest + configFlagWithPath + userJestArgs);

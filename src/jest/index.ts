@@ -10,7 +10,8 @@ const jestPath = "'" + appRoot.resolve("./node_modules/jest/bin/jest.js") + "'";
 
 const executeJest = "node " + jestPath + " ";
 
-const configFlagWithPath = "--config ./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js ";
+const jestConfigPath = "'" + appRoot.resolve("./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js") + "'";
+const configFlagWithPath = "--config " + jestConfigPath + " ";
 
 
 const userJestArgs = getUserJestArgs();
