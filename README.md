@@ -61,15 +61,12 @@ Custom typescript wrapper around webpack
 ```
 
 <h2 align="center">Jest (For testing)</h2>
-This is a wrapper around the Jest test
+This is a wrapper around the Jest test with typescript/jsx configurations setup, file-loader configurations
 
  - To run all tests ```tquinlan1992-webpack-util-jest```
     - This runs the tests for ```"(/__src__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?|ts?|js?)$"```
 
-- To update a snapshot use the flag ```--updateSnapshot``` or the alias ```-u```
-    - ```tquinlan1992-webpack-util-jest --updateSnapshot```
-
-- For coverage report ```tquinlan1992-webpack-util-jest --coverage```
+ - All jest cli commands can be used https://facebook.github.io/jest/docs/en/cli.html
 
 <h3 align="left">Development env for index.js</h3>
 
