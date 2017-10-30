@@ -10,6 +10,7 @@ function addJestFlags(params) {
     if (updateSnapshot) {
         jestOptions + "--updateSnapshot ";
     }
+    return jestOptions;
 }
 var optionDefintions = [
     {
@@ -20,4 +21,4 @@ var options = commandLineArgs(optionDefintions);
 var executeJest = "node ./node_modules/jest/bin/jest.js ";
 var configFlagWithPath = "--config ./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js ";
 var jestFlags = addJestFlags(options);
-shell.exec(executeJest + configFlagWithPath + addJestFlags + jestFlags);
+shell.exec(executeJest + configFlagWithPath + jestFlags);

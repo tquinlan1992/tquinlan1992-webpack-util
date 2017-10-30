@@ -1,13 +1,15 @@
 import * as shell from 'shelljs';
 import * as commandLineArgs from 'command-line-args';
 
-function addJestFlags(params: {updateSnapshot: Boolean}) {
+function addJestFlags(params: {updateSnapshot: Boolean}): String {
     const { updateSnapshot } = params;
 
     let jestOptions = "";
     if (updateSnapshot) {
         jestOptions + "--updateSnapshot "
     }
+
+    return jestOptions;
 }
 
 const optionDefintions = [
@@ -25,4 +27,4 @@ const configFlagWithPath ="--config ./node_modules/tquinlan1992-webpack-util/src
 
 const jestFlags = addJestFlags(options);
 
-shell.exec(executeJest + configFlagWithPath + addJestFlags + jestFlags);
+shell.exec(executeJest + configFlagWithPath + jestFlags);
