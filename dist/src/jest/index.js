@@ -8,7 +8,7 @@ function addJestFlags(params) {
     var updateSnapshot = params.updateSnapshot;
     var jestOptions = "";
     if (updateSnapshot) {
-        jestOptions + "--updateSnapshot ";
+        jestOptions += "--updateSnapshot ";
     }
     return jestOptions;
 }

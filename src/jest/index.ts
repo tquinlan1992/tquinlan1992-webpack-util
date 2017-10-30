@@ -6,7 +6,7 @@ function addJestFlags(params: {updateSnapshot: Boolean}): String {
 
     let jestOptions = "";
     if (updateSnapshot) {
-        jestOptions + "--updateSnapshot "
+        jestOptions += "--updateSnapshot "
     }
 
     return jestOptions;
