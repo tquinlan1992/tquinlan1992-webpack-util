@@ -1,8 +1,28 @@
 import * as shell from 'shelljs';
+import * as commandLineArgs from 'command-line-args';
+
+function addJestFlags(params: {updateSnapshot: Boolean}) {
+    const { updateSnapshot } = params;
+
+    let jestOptions = "";
+    if (updateSnapshot) {
+        jestOptions + "--updateSnapshot "
+    }
+}
+
+const optionDefintions = [
+    {
+        name: 'updateSnapshot', type: Boolean, defaultValue: false
+    }
+]
+
+const options = commandLineArgs(optionDefintions);
 
 
 const executeJest = "node ./node_modules/jest/bin/jest.js "
 
-const configFlagWithPath ="--config ./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js";
+const configFlagWithPath ="--config ./node_modules/tquinlan1992-webpack-util/src/jest/jest.config.js ";
 
-shell.exec(executeJest + configFlagWithPath);
+const jestFlags = addJestFlags(options);
+
+shell.exec(executeJest + configFlagWithPath + addJestFlags + jestFlags);

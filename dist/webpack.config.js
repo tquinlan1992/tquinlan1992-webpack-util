@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var appRoot = require('app-root-path');
-var awesome_typescript_loader_1 = require("./src/awesome-typescript-loader");
+var awesome_typescript_loader_1 = require("./src/util/awesome-typescript-loader");
 var entry = './index.ts';
 var dist = appRoot + './dist';
 var appOutputPath = dist;
