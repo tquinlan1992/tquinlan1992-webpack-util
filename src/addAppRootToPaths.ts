@@ -16,10 +16,10 @@ function addDefaultPaths(config: any) {
 function addAppRootToPaths(config: any) {
     const { entry, appOutputPath, tsconfig, publicDirSrc } = config;
     const absolutePathsConfig = (<any>Object).assign(config, {
-        entry: path.resolve(entry),
-        appOutputPath: path.resolve(appOutputPath),
-        tsconfig: path.resolve(tsconfig),
-        publicDirSrc: path.resolve(publicDirSrc)
+        entry: path.resolve(process.cwd() + entry),
+        appOutputPath: path.resolve(process.cwd() + appOutputPath),
+        tsconfig: path.resolve(process.cwd() + tsconfig),
+        publicDirSrc: path.resolve(process.cwd() + publicDirSrc)
     });
 
     return absolutePathsConfig;
