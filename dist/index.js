@@ -7,7 +7,7 @@ var jsonfile = require("jsonfile");
 var handleNoDevServerFlag_1 = require("./src/handleNoDevServerFlag");
 var generateWebpackCompiler_1 = require("./src/generateWebpackCompiler");
 var addAppRootToPaths_1 = require("./src/addAppRootToPaths");
-var path = require('./path');
+var path = require('path');
 var optionDefintions = [
     {
         name: 'config', type: String, defaultValue: path.resolve("tquinlan1992-webpack-util.config.json")

@@ -4,7 +4,7 @@ import * as jsonfile from 'jsonfile';
 import handleNoDevServerFlag from './src/handleNoDevServerFlag';
 import generateWebpackCompiler from './src/generateWebpackCompiler';
 import addAppRootToPaths from './src/addAppRootToPaths';
-const path = require('./path');
+const path = require('path');
 
 const optionDefintions = [
     {
