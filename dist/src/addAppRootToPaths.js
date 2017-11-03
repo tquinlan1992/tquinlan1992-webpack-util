@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var appRoot = require('app-root-path');
+var path = require('path');
 function setDefaultIfNoConfig(params) {
     var path = params.path, defaultPath = params.defaultPath;
     return path ? path : defaultPath;
@@ -15,10 +15,10 @@ function addDefaultPaths(config) {
 function addAppRootToPaths(config) {
     var entry = config.entry, appOutputPath = config.appOutputPath, tsconfig = config.tsconfig, publicDirSrc = config.publicDirSrc;
     var absolutePathsConfig = Object.assign(config, {
-        entry: appRoot + entry,
-        appOutputPath: appRoot + appOutputPath,
-        tsconfig: appRoot + tsconfig,
-        publicDirSrc: appRoot + publicDirSrc
+        entry: path.resolve(entry),
+        appOutputPath: path.resolve(appOutputPath),
+        tsconfig: path.resolve(tsconfig),
+        publicDirSrc: path.resolve(publicDirSrc)
     });
     return absolutePathsConfig;
 }

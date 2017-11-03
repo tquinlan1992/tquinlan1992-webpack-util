@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var commandLineArgs = require("command-line-args");
@@ -8,9 +7,10 @@ var jsonfile = require("jsonfile");
 var handleNoDevServerFlag_1 = require("./src/handleNoDevServerFlag");
 var generateWebpackCompiler_1 = require("./src/generateWebpackCompiler");
 var addAppRootToPaths_1 = require("./src/addAppRootToPaths");
+var path = require('./path');
 var optionDefintions = [
     {
-        name: 'config', type: String, defaultValue: "tquinlan1992-webpack-util.config.json"
+        name: 'config', type: String, defaultValue: path.resolve("tquinlan1992-webpack-util.config.json")
     },
     {
         name: 'watch', alias: 'w', type: Boolean

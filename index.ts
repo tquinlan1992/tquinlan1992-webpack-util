@@ -4,10 +4,11 @@ import * as jsonfile from 'jsonfile';
 import handleNoDevServerFlag from './src/handleNoDevServerFlag';
 import generateWebpackCompiler from './src/generateWebpackCompiler';
 import addAppRootToPaths from './src/addAppRootToPaths';
+const path = require('./path');
 
 const optionDefintions = [
     {
-        name: 'config', type: String, defaultValue: "tquinlan1992-webpack-util.config.json"
+        name: 'config', type: String, defaultValue: path.resolve("tquinlan1992-webpack-util.config.json")
     },
     {
         name: 'watch', alias: 'w', type: Boolean
