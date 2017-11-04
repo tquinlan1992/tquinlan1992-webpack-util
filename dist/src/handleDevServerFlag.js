@@ -13,7 +13,7 @@ function handleDevServerFlag(params) {
         },
         historyApiFallback: true,
         hot: true,
-        publicPath: "/assets/"
+        publicPath: "/"
     });
     var port = 8080;
     server.listen(port, "0.0.0.0", function () {

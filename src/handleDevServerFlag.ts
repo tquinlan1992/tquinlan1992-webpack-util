@@ -14,7 +14,7 @@ function handleDevServerFlag(params: {compiler: any, config: any}) {
         },
         historyApiFallback: true,
         hot: true,
-        publicPath: "/assets/"
+        publicPath: "/"
     });
     const port = 8080;
     server.listen(port, "0.0.0.0", () => {
