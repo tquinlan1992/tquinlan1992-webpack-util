@@ -14,7 +14,6 @@ declare function createWebpackConfig(params: {
     output: {
         filename: string;
         path: string;
-        publicPath: string;
     };
     devtool: string;
     resolve: {
