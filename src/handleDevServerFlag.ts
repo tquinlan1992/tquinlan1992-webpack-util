@@ -13,8 +13,7 @@ function handleDevServerFlag(params: {compiler: any, config: any}) {
             app.use(express.static(appOutputPath + publicDirOut));
         },
         historyApiFallback: true,
-        hot: true,
-        publicPath: "/app/"
+        hot: true
     });
     const port = 8080;
     server.listen(port, "0.0.0.0", () => {
