@@ -13,7 +13,7 @@ function createWebpackConfig(params) {
     return {
         entry: [entry,
             'webpack/hot/dev-server',
-            'webpack-dev-server/client?' + urlBase + ":" + port],
+            'webpack-dev-server/client?' + urlBase + ":" + (port ? port : 8080)],
         output: {
             filename: appOutputFilename,
             path: appOutputPath
