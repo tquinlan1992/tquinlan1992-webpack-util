@@ -9,11 +9,11 @@ var webpack = require('webpack');
 var typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
 var htmlAppMountId = 'app';
 function createWebpackConfig(params) {
-    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig, url = params.url;
+    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig, urlBase = params.urlBase;
     return {
         entry: [entry,
             'webpack/hot/dev-server',
-            'webpack-dev-server/client?' + url],
+            'webpack-dev-server/client?' + urlBase],
         output: {
             filename: appOutputFilename,
             path: appOutputPath

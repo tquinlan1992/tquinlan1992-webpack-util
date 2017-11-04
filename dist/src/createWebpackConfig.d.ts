@@ -7,7 +7,7 @@ declare function createWebpackConfig(params: {
     publicDir: string;
     publicDirContext: string;
     publicDirTo: string;
-    url: string;
+    urlBase: string;
 }): {
     entry: string[];
     output: {
