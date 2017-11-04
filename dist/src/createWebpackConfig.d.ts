@@ -8,6 +8,7 @@ declare function createWebpackConfig(params: {
     publicDirContext: string;
     publicDirTo: string;
     urlBase: string;
+    port: number;
 }): {
     entry: string[];
     output: {

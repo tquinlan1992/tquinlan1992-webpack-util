@@ -56,7 +56,9 @@ Custom typescript wrapper around webpack
     "appOutputPath": "/build",
     "htmlTitle": "Webpack",
     "publicDirSrc": "/src/public/**/*",
-    "publicDirOut": "/public"
+    "publicDirOut": "/public",
+    "urlBase": "hostname",
+    "port": "optional port for hostname"
 }
 ```
 
