@@ -15,7 +15,7 @@ function handleDevServerFlag(params: {compiler: any, config: any}) {
         historyApiFallback: true,
         hot: true
     });
-    const port = 8080;
+    const port = config.port ? config.port : 8080 ;
     server.listen(port, "0.0.0.0", () => {
         console.log("webpack dev server listening on port: " + port)
     });
