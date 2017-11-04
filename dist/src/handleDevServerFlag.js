@@ -11,7 +11,8 @@ function handleDevServerFlag(params) {
         setup: function (app) {
             app.use(express.static(appOutputPath + publicDirOut));
         },
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true
     });
     var port = 8080;
     server.listen(port, "0.0.0.0", function () {

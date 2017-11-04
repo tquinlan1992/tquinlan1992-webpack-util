@@ -7,8 +7,9 @@ declare function createWebpackConfig(params: {
     publicDir: string;
     publicDirContext: string;
     publicDirTo: string;
+    url: string;
 }): {
-    entry: string;
+    entry: string[];
     output: {
         filename: string;
         path: string;

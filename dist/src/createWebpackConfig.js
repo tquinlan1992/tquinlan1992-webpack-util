@@ -5,12 +5,15 @@ var sassLoader_1 = require("./util/sassLoader");
 var source_map_loader_1 = require("./util/source-map-loader");
 var url_loader_1 = require("./util/url-loader");
 var html_webpack_plugin_1 = require("./util/html-webpack-plugin");
+var webpack = require('webpack');
 var typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
 var htmlAppMountId = 'app';
 function createWebpackConfig(params) {
-    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig;
+    var entry = params.entry, appOutputFilename = params.appOutputFilename, appOutputPath = params.appOutputPath, htmlTitle = params.htmlTitle, tsconfig = params.tsconfig, url = params.url;
     return {
-        entry: entry,
+        entry: [entry,
+            'webpack/hot/dev-server',
+            'webpack-dev-server/client?' + url],
         output: {
             filename: appOutputFilename,
             path: appOutputPath
@@ -28,7 +31,8 @@ function createWebpackConfig(params) {
             ]
         },
         plugins: [
-            html_webpack_plugin_1.default({ htmlTitle: htmlTitle, htmlAppMountId: htmlAppMountId })
+            html_webpack_plugin_1.default({ htmlTitle: htmlTitle, htmlAppMountId: htmlAppMountId }),
+            new webpack.HotModuleReplacementPlugin()
         ]
     };
 }

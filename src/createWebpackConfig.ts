@@ -3,14 +3,17 @@ import sassLoader from './util/sassLoader';
 import sourceMapLoader from './util/source-map-loader';
 import urlLoader from './util/url-loader';
 import htmlWebpackPlugin from './util/html-webpack-plugin';
+const webpack = require('webpack');
 
 const typescriptExtensions = [".ts", ".tsx", ".js", ".json"];
 const htmlAppMountId = 'app';
 
-function createWebpackConfig(params: { entry: string, appOutputFilename: string, appOutputPath: string, htmlTitle: string, tsconfig: string, publicDir: string, publicDirContext: string, publicDirTo: string }) {
-    const { entry, appOutputFilename, appOutputPath, htmlTitle, tsconfig} = params;
+function createWebpackConfig(params: { entry: string, appOutputFilename: string, appOutputPath: string, htmlTitle: string, tsconfig: string, publicDir: string, publicDirContext: string, publicDirTo: string, url: string }) {
+    const { entry, appOutputFilename, appOutputPath, htmlTitle, tsconfig, url } = params;
     return {
-        entry: entry,
+        entry: [entry,
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?' + url],
         output: {
             filename: appOutputFilename,
             path: appOutputPath
@@ -28,7 +31,8 @@ function createWebpackConfig(params: { entry: string, appOutputFilename: string,
             ]
         },
         plugins: [
-            htmlWebpackPlugin({ htmlTitle, htmlAppMountId })
+            htmlWebpackPlugin({ htmlTitle, htmlAppMountId }),
+            new webpack.HotModuleReplacementPlugin()
         ]
     }
 }
