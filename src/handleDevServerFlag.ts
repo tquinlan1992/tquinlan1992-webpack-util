@@ -7,14 +7,14 @@ function handleDevServerFlag(params: {compiler: any, config: any}) {
 
     copyPublicFolder.watch(config);
 
-    const { publicDirOut, appOutputPath } = config;
+    const { publicDirOut, appOutputPath, url } = config;
     const server = new WebpackDevServer(compiler, {
         setup: function(app: any) {
             app.use(express.static(appOutputPath + publicDirOut));
         },
         historyApiFallback: true,
         hot: true,
-        publicPath: "/"
+        publicPath: url
     });
     const port = 8080;
     server.listen(port, "0.0.0.0", () => {

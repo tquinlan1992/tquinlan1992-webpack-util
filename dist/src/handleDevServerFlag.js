@@ -6,14 +6,14 @@ var copyPublicFolder_1 = require("./copyPublicFolder");
 function handleDevServerFlag(params) {
     var compiler = params.compiler, config = params.config;
     copyPublicFolder_1.default.watch(config);
-    var publicDirOut = config.publicDirOut, appOutputPath = config.appOutputPath;
+    var publicDirOut = config.publicDirOut, appOutputPath = config.appOutputPath, url = config.url;
     var server = new WebpackDevServer(compiler, {
         setup: function (app) {
             app.use(express.static(appOutputPath + publicDirOut));
         },
         historyApiFallback: true,
         hot: true,
-        publicPath: "/"
+        publicPath: url
     });
     var port = 8080;
     server.listen(port, "0.0.0.0", function () {
