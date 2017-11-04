@@ -16,7 +16,8 @@ function createWebpackConfig(params) {
             'webpack-dev-server/client?' + urlBase + ":" + (port ? port : 8080)],
         output: {
             filename: appOutputFilename,
-            path: appOutputPath
+            path: appOutputPath,
+            publicPath: '/assets/'
         },
         devtool: "source-map",
         resolve: {
