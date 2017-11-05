@@ -58,7 +58,8 @@ Custom typescript wrapper around webpack
     "publicDirSrc": "/src/public/**/*",
     "publicDirOut": "/public",
     "urlBase": "hostname",
-    "port": "optional port for hostname"
+    "port": "optional port for hostname",
+    "allowedHosts": "optional hosts allowed"
 }
 ```
 

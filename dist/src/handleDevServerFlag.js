@@ -12,7 +12,8 @@ function handleDevServerFlag(params) {
             app.use(express.static(appOutputPath + publicDirOut));
         },
         historyApiFallback: true,
-        hot: true
+        hot: true,
+        allowedHosts: config.allowedHosts ? config.allowedHosts : []
     });
     var port = config.port ? config.port : 8080;
     server.listen(port, "0.0.0.0", function () {
