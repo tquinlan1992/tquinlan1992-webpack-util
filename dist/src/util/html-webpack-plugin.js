@@ -7,7 +7,8 @@ function getHtmlWebpackPlugin(params) {
         title: params.htmlTitle,
         inject: false,
         template: htmlWebpackTemplate,
-        appMountId: params.htmlAppMountId
+        appMountId: params.htmlAppMountId,
+        meta: params.meta
     });
 }
 exports.default = getHtmlWebpackPlugin;

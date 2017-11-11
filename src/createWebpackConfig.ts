@@ -31,7 +31,9 @@ function createWebpackConfig(params: { entry: string, appOutputFilename: string,
             ]
         },
         plugins: [
-            htmlWebpackPlugin({ htmlTitle, htmlAppMountId }),
+            htmlWebpackPlugin({ htmlTitle, htmlAppMountId, meta: [
+                {name: "viewport", content: "width=device-width, initial-scale=1"}
+            ] }),
             new webpack.HotModuleReplacementPlugin()
         ]
     }
